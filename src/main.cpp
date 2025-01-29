@@ -14,6 +14,7 @@
 #include <sys/mount.h>
 #endif
 
+#ifdef __APPLE__
 std::string get_mount_point(const std::string& usb_path) {
     FILE* fp = popen("mount", "r");
     if (!fp) throw std::runtime_error("Failed to run mount command");
@@ -35,6 +36,7 @@ std::string get_mount_point(const std::string& usb_path) {
     pclose(fp);
     throw std::runtime_error("Device is not mounted: " + usb_path);
 }
+#endif
 
 void unmount_device(const std::string& usb_path) {
     #ifdef _WIN32
