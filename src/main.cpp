@@ -69,7 +69,7 @@ void unmount_device(const std::string& usb_path) {
         throw std::runtime_error("Failed to unmount USB device: " + usb_path);
     }
     #else
-    if (umount(usb_path) != 0) {
+    if (umount(usb_path.c_str()) != 0) {
         perror("umount failed");
         throw std::runtime_error("Failed to unmount USB device: " + usb_path);
     }
