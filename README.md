@@ -25,4 +25,4 @@ Linux / MacOS
 
 ## License
 
-- MIT
+[MIT](https://opensource.org/license/mit)
