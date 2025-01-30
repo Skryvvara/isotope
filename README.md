@@ -7,8 +7,11 @@ Isotope is a utility written in c++ to write iso images to usb devices.
 
 ## Build
 
-Linux / MacOS
 ```sh
+mkdir build
+cd build
+
+cmake ..
 make
 ```
 
