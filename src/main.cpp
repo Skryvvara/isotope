@@ -146,7 +146,9 @@ int main(int argc, char* argv[]) {
     const std::string usb_path = argv[2];
 
     try {
+        #ifdef __APPLE__
         unmount_device(usb_path);
+        #endif
 
         write_iso_to_usb(iso_path, usb_path);
     } catch (const std::exception& ex) {
